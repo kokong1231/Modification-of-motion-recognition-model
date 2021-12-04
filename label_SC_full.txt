@@ -1,0 +1,22 @@
+﻿label,label name,label name en,
+0,기침,cough,X
+1,가래,phlegm,O
+2,인후통,sore_throat,O
+3,호흡곤란,respiratory_difficulty,O
+4,근육통,muscle_pain,O
+5,두통,headache,O
+6,오한,chill,O
+7,미각손실,palate_loss,X
+8,후각소실,olfactory_loss,△
+9,설사,diarrhea,O
+10,폐렴,pneumonia,O
+11,복시,diploplia,O
+12,발열,fever,O
+13,네,yes,X
+14,네,yes_2,X
+15,아니오,no,△
+16,아니오,no_2,△
+17,상,heavy,X
+18,중,middle,O
+19,하,light,△
+20,하,light_2,O

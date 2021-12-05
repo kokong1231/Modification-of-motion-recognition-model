@@ -59,6 +59,7 @@ function onResults(results) {
             }
             if (landmark_count >= 10) {
                 modelPost();
+                modelPostOther();
                 point_history = new Array(60).fill(zeroarray);
                 mode = 0;
                 model_count = 0;
@@ -76,6 +77,23 @@ function onResults(results) {
 
 function modelPost() {
     fetch("http://localhost:4000/api_hands", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            data: point_history,
+        }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log("signlanglabel" + data['label']);
+            console.log(data['label']);
+        });
+}
+
+function modelPostOther() {
+    fetch("http://localhost:4000/api_other", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

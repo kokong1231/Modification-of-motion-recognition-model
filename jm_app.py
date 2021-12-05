@@ -215,10 +215,11 @@ def main(mode, mode_count, button_overlay, delete_count, delete_button_overlay, 
 
         img, result = detector.findHandswithResult(img, draw=False)
         
-        hand_lmlist, _ = detector.findPosition(img, draw=False)
+        hand_lmlist = detector.findPosition(img, draw=False)
 
         
         if result.multi_hand_landmarks is not None:
+            # 좌표값
             x1, y1 = hand_lmlist[8][1:3]
             thumb_index_angle = int(detector.findHandAngle(img, 4, 2, 5, draw=False))
             # change mode button

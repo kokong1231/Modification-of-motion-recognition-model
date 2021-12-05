@@ -8,6 +8,8 @@ from model import ScreeningClinicHandsClassifier
 from flask_cors import CORS
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, MaxAbsScaler, RobustScaler
 
+from jm_logic import model_access_product
+
 StandardScaler = StandardScaler()
 MinMaxScaler = MinMaxScaler()
 MaxAbsScaler = MaxAbsScaler()
@@ -174,6 +176,7 @@ def api_hands():
     point_history = np.array(request.json['data'])
     reliability, label_name = predict_hands(point_history)
     reliability = reliability * 100
+    model_access_product(point_history, point_history)
     print(label_name)
     print(reliability)
     if reliability > 85:
